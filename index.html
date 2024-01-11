@@ -21,17 +21,16 @@
         <nav>
           <a href="#" class="logo"><img src="./img/mark.png" alt="" /></a>
           <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="#aboutme">About Me</a>
-            <a href="#services">Technologies </a>
-            <a href="#projects">Projects</a>
+            <a class="links" href="/">Home</a>
+            <a class="links" href="#aboutme">About Me</a>
+            <a class="links" href="#services">Technologies </a>
+            <a class="links" href="#projects">Projects</a>
             <!-- <a href="/contact">Contact</a> -->
           </div>
           <button
             role="menu"
             aria-label="button"
             class="menu"
-            onclick="event.currentTarget.classList.toggle('active')"
           >
             <span></span>
             <span></span>
@@ -235,5 +234,17 @@
     >
       Kaleem Ullah Jelani owns all the copyrights©.
     </footer>
+    <script>
+      const menu = document.querySelector('.menu')
+      menu.addEventListener('click', (e) => {
+        e.target.classList.toggle('active')
+      })
+      const links = document.querySelectorAll('.links')
+      links.forEach(e =>{
+        e.addEventListener('click', ()=>{
+          menu.classList.remove('active')
+        })
+      })
+    </script>
   </body>
 </html>
